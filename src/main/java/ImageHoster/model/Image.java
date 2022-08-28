@@ -1,5 +1,4 @@
 package ImageHoster.model;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,7 +35,6 @@ public class Image {
 
     @Column(name = "date")
     private Date date;
-
     //The 'images' table is mapped to 'users' table with Many:One mapping
     //One image can have only one user (owner) but one user can have multiple images
     //FetchType is EAGER
@@ -72,16 +70,16 @@ public class Image {
         this.date = date;
     }
 
-
-
     public Integer getId() {
         return id;
     }
 
+    
     public void setId(Integer id) {
         this.id = id;
     }
 
+    
     public String getTitle() {
         return title;
     }
@@ -90,6 +88,7 @@ public class Image {
         this.title = title;
     }
 
+    
     public String getImageFile() {
         return imageFile;
     }
@@ -106,6 +105,7 @@ public class Image {
         this.description = description;
     }
 
+    
     public Date getDate() {
         return date;
     }
@@ -122,6 +122,7 @@ public class Image {
         this.user = user;
     }
 
+    
     public List<Tag> getTags() {
         return tags;
     }
@@ -137,4 +138,6 @@ public class Image {
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+    
 }
+
