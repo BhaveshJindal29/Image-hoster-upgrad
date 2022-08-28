@@ -1,6 +1,4 @@
 package ImageHoster.controller;
-
-
 import ImageHoster.model.Image;
 import ImageHoster.model.User;
 import ImageHoster.model.UserProfile;
@@ -50,7 +48,6 @@ public class CommentControllerTest {
         session = new MockHttpSession();
         session.setAttribute("loggeduser", user);
 
-
         Image image = new Image();
         image.setId(1);
         image.setTitle("new");
@@ -58,6 +55,7 @@ public class CommentControllerTest {
 
         Mockito.when(imageService.getImage(Mockito.anyInt())).thenReturn(image);
 
+        
         this.mockMvc.perform(post("/image/1/new/comments")
                 .param("comment", "This comment is for testing purpose")
                 .session(session))
