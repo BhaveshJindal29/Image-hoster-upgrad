@@ -1,13 +1,12 @@
 package ImageHoster.service;
-
 import ImageHoster.model.User;
 import ImageHoster.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class UserService {
-
     @Autowired
     private UserRepository userRepository;
 
@@ -25,11 +24,15 @@ public class UserService {
     //Else returns null
     public User login(User user) {
         User existingUser = userRepository.checkUser(user.getUsername(), user.getPassword());
-        if (existingUser != null) {
+        if (existingUser != null) 
+        {
             return existingUser;
-        } else {
+        } 
+        else 
+        {
             return null;
         }
     }
 
+    
 }
