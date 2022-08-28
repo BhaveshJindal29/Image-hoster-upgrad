@@ -115,8 +115,6 @@ public class ImageControllerTest {
                 .andExpect(view().name("images/upload"))
                 .andExpect(content().string(containsString("Upload New Image")));
     }
-
-
     //This test checks the controller logic when the logged in submits the image to be uploaded in the application and checks whether the logic returns the html file 'images.html'
     @Test
     public void uploadImageWithPostRequest() throws Exception {
@@ -162,20 +160,16 @@ public class ImageControllerTest {
         user.setId(1);
         user.setUsername("Abhi");
         user.setPassword("password1@");
-
         session = new MockHttpSession();
         session.setAttribute("loggeduser", user);
-
         Image image = new Image();
         image.setId(1);
         image.setTitle("new");
         image.setDescription("This image is for testing purpose");
         image.setUser(user);
-
         Tag tag = new Tag();
         tag.setId(1);
         tag.setName("dog");
-
         List<Tag> tags = new ArrayList<>();
         tags.add(tag);
         image.setTags(tags);
